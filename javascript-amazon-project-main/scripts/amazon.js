@@ -1,39 +1,49 @@
-//1. save the data and its also called data structure
-const products = [{
-    image : 'images/products/athletic-cotton-socks-6-pairs.jpg',
-    name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
-    rating:{   //stars and count so object
-        stars: 4.5,
-        count: 87
-    },
-    priceCents: 1090
+//a. save the data and its also called data structure
+// const products = [{
+//     image : 'images/products/athletic-cotton-socks-6-pairs.jpg',
+//     name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
+//     rating:{   //stars and count so object
+//         stars: 4.5,
+//         count: 87
+//     },
+//     priceCents: 1090
 
-},{
-    image : 'images/products/intermediate-composite-basketball.jpg',
-    name: 'Intermediate Size Basketball',
-    rating:{   
-        stars: 4,
-        count: 127
-    },
-    priceCents: 2095
+// },{
+//     image : 'images/products/intermediate-composite-basketball.jpg',
+//     name: 'Intermediate Size Basketball',
+//     rating:{   
+//         stars: 4,
+//         count: 127
+//     },
+//     priceCents: 2095
 
-},{
-    image : 'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',
-    name: 'Adults Plain Cotton T-Shirt - 2 Pack',
-    rating:{   
-        stars: 4.5,
-        count: 56
-    },
-    priceCents: 799
-}]; 
+// },{
+//     image : 'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',
+//     name: 'Adults Plain Cotton T-Shirt - 2 Pack',
+//     rating:{   
+//         stars: 4.5,
+//         count: 56
+//     },
+//     priceCents: 799
+    
+// },{
+    
+//         image : 'images/products/black-2-slot-toaster.jpg',
+//         name: '2 Slot Toaster - Black',
+//         rating:{   
+//             stars: 5,
+//             count: 2197
+//         },
+//         priceCents: 1899
+// }]; 
 
 
-//2.1 combing html into one string  
+//b.i combing html into one string  
 // let us create a variabe and everytime we loop through const html it accumuates
 let productsHTML = '';
 
 
-//2. generate html using the data 
+//b. generate html using the data 
  products.forEach((product)=>{   //forEach goes through every object of products and  saves it in parameter called product
     productsHTML +=  `
       <div class="product-container">
@@ -43,7 +53,7 @@ let productsHTML = '';
         </div>
 
         <div class="product-name limit-text-to-2-lines">
-        "${product.name}
+        ${product.name}
         </div>
 
         <div class="product-rating-container">
@@ -55,7 +65,7 @@ let productsHTML = '';
         </div>
 
         <div class="product-price">
-         ${(product.priceCents/100).toFixed(2)}
+         $${(product.priceCents/100).toFixed(2)}
         </div>
 
         <div class="product-quantity-container">
