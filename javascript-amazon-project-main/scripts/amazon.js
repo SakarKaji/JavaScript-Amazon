@@ -90,7 +90,8 @@ let productsHTML = '';
         Added
         </div>
 
-        <button class="add-to-cart-button button-primary">
+        <button class="add-to-cart-button button-primary js-add-to-cart"
+        data-product-id="${product.id}">
         Add to Cart
         </button>
     </div>`;
@@ -101,7 +102,43 @@ let productsHTML = '';
 // 42 line no     src="${product.image}"> // dollar {} is used to insert value into template string 
 // 51 lineno src="images/ratings/rating-${product.rating.stars * 10}.png"> //there was 4.5 and name is 35,50,45.. so * by 10
 
-console.log(productsHTML);
+// console.log(productsHTML);
 
 document.querySelector('.js-products-grid').
 innerHTML = productsHTML ;
+
+document.querySelectorAll('.js-add-to-cart').
+forEach((button) => {
+
+    button.addEventListener('click', () => {
+     const productId =  button.dataset.productId;
+
+
+    //  3rd step 
+        let matchingItem; 
+
+    // 2nd step
+    cart.forEach((item) => {
+        if(productId == item.productIame){
+            matchingItem = item;
+        }
+    })
+
+        if(matchingItem){
+            matchingItem.quantity += 1;
+        }else{
+            cart.push({
+                productId: productId,
+                quantity: 1
+            });
+        }
+
+    //  1st step to understand
+    // cart.push({
+    //     productName: productName,
+    //     quantity: 1
+    // });
+    
+    console.log(cart);
+    });
+});
