@@ -126,17 +126,17 @@ forEach((button) => {
     })
 
     const quantitySelector = document.querySelector(
-        `js-quantity-selector-${productId}` );
+        `.js-quantity-selector-${productId}` );
 
-    //    13e const quantity = Number(quantitySelector.value);
+    const quantity = Number(quantitySelector.value);
 
 
         if(matchingItem){
-            matchingItem.quantity += 1;
+            matchingItem.quantity += quantity;
         }else{
             cart.push({
                 productId: productId,
-                quantity: 1
+                quantity: quantity
             });
         }
 
@@ -156,7 +156,7 @@ forEach((button) => {
          .innerHTML = cartQuantity;
 
          const addedMessage = document.querySelector(
-            `js-added-to-cart-${product.id}`
+            `.js-added-to-cart-${productId}`
          );
 
          addedMessage.classList.add('added-to-cart-visible');
