@@ -128,6 +128,8 @@ forEach((button) => {
     const quantitySelector = document.querySelector(
         'js-quantity-selector-${product.id}' );
 
+        const quantity = quantitySelector.value ;
+
 
         if(matchingItem){
             matchingItem.quantity += 1;
