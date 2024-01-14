@@ -86,7 +86,7 @@ let productsHTML = '';
 
         <div class="product-spacer"></div>
 
-        <div class="added-to-cart">
+        <div class="added-to-cart js-added-to-cart-${product.id}">
         <img src="images/icons/checkmark.png">
         Added
         </div>
@@ -126,9 +126,9 @@ forEach((button) => {
     })
 
     const quantitySelector = document.querySelector(
-        'js-quantity-selector-${product.id}' );
+        `js-quantity-selector-${productId}` );
 
-        const quantity = quantitySelector.value ;
+    //    13e const quantity = Number(quantitySelector.value);
 
 
         if(matchingItem){
@@ -154,8 +154,16 @@ forEach((button) => {
 
          document.querySelector('.js-cart-quantity')
          .innerHTML = cartQuantity;
+
+         const addedMessage = document.querySelector(
+            `js-added-to-cart-${product.id}`
+         );
+
+         addedMessage.classList.add('added-to-cart-visible');
+
+         
          
         //  console.log(cartQuantity);
-        //  console.log(cart);
+        console.log(cart);
     });
 });
